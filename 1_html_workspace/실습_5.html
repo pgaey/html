@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+</head>
+<body>
+    <form action="test.co">
+        <fieldset>
+            <legend>회원가입 양식</legend>
+
+            * 아이디 <br>
+            <input type="text" name="userId" size="30" minlength="5" maxlength="20" 
+                   placeholder="영문 소문자, 숫자, 특수기호(..)5~20">
+            <input type="submit" value="아이디 중복확인"> <br><br>
+            
+            * 비밀번호 <br>
+            <input type="password" name="userPwd" size="30" minlength="8" maxlength="15" placeholder="영문, 숫자, 특수문자 8~15"> <br><br>
+
+            * 비밀번호 재확인 <br>
+            <input type="password" name="userPwd" size="30" minlength="8" maxlength="15" placeholder="영문, 숫자, 특수문자 8~15"> <br><br>
+            
+            * 이름 <br>
+            <input type="text" name="userName" size="30"> <br><br>
+            
+            * 주민등록번호 <br>
+            <input type="text" name="userNo" size="11"> - <input type="text" name="userNo" size="11"> <br><br>
+
+            * 성별 <br>
+            <input type="radio" name="gender" value="선택안함" id="선택안함" checked> <label for="선택안함">선택안함</label>
+            <input type="radio" name="gender" value="남자" id="남자"><label for="남자">남자</label>
+            <input type="radio" name="gender" value="여자" id="여자"><label for="여자">여자</label> <br><br>
+
+            * 생년월일 <br>
+            <input type="date" name="date"> <br><br>
+
+            * 주소 <br>
+            <input type="text" name="address" size="30"> <br><br>
+
+            * 우편번호 <br>
+            <input type="text" name="adNum" size="15">
+            <button>우편번호찾기</button>
+            <input type="checkbox"> 우편수신동의 <br><br>
+            
+            * 이메일 <br>
+            <input type="text" name="email" size="30">
+            <input type="checkbox"> 메일수신동의 <br><br>
+
+            * 휴대폰번호 <br>
+            <select name="firstPhone">
+                <option>010</option>
+                <option>011</option>
+                <option>017</option>
+            </select>
+            -
+            <input type="text" name="middlePhone" maxlength="4" size="6">
+            -
+            <input type="text" name="lastPhone" maxlength="4" size="6">
+            <input type="checkbox"> 문자수신동의 <br><br>
+
+            <button type="reset">초기화</button>
+            <button>가입하기</button>
+
+
+
+
+
+        </fieldset>
+
+    </form>
+
+</body>
+</html>

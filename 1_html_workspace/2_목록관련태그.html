@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>목록관련태그</title>
+</head>
+<body>
+    <!-- li : 가장 기본적인 목록을 나타내는 태그, list 약자 -->
+    <li>목록1</li>
+    <li>목록2</li>
+
+    <hr>
+
+    <h1>ul(unorderedlist) : 순서 없는 목록 태그</h1>
+    <ul>
+        <li>HTML</li>
+            <ul>
+                <!-- 목록안에 목록을 넣을 수 있다.-->
+                <li>글자관련태그</li>
+                <li>목록관련태그</li>
+            </ul>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <!-- 불릿(bullet)기호 : 채워진 원, 빈 원, 네모, 모양 색상 변경 가능 -> CSS 시간에 ~ -->
+
+    <br>
+
+    <h1>ol(orderedlist) : 순서 있는 목록 태그</h1>
+
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <!-- ol요소 같은 경우 기본적으로 1부터 시작하는 숫자값을 붙여줌 -->
+    </ol>
+
+    <!--type속성을 이용해서 변경 가능(속성값 : 1(기본값), A, a i, I)-->
+
+    <ol type="A">
+        <li>레드향</li>
+        <li>천혜향</li>
+        <li>한라봉</li>
+        <li>감귤</li>
+    </ol>
+
+    <ol type="a">
+        <li>레몬</li>
+        <li>자몽</li>
+        <li>감자(가짜)</li>
+        <li>라임</li>
+    </ol>
+
+    <ol type="i">
+        <li>오렌지</li>
+        <li>비터오렌지</li>
+        <li>인도귤</li>
+        <li>탐나는봉</li>
+    </ol>
+
+    <ol type="I">
+        <li>광귤</li>
+        <li>병귤</li>
+        <li>청귤</li>
+        <li>탄제린</li>
+    </ol>
+
+    <ol start="5">
+        <li>나는 5다</li>
+        <li>나는 6이다</li>
+        <li>나는 7이다</li>
+        <li>나는 8이다</li>
+    </ol>
+    
+    <hr>
+
+    <h1>dl : 설명과 관련된 목록 태그</h1>
+
+    <dl>
+        <dt>이곳은 제목을 작성하는 곳</dt>
+        <dd>여기에 해당 설명을 작성한다</dd>
+        <dd>여러 줄을 작성할 수 있다.</dd>
+
+        <dt>제목을 또 쓸 수 있다</dt>
+        <dd>설명도 또 쓸 수 있다.</dd>
+        
+    </dl>
+
+    <hr>
+
+    <!-- 실습 -->
+    <h3>자바(Java)과정 학습내용</h3>
+    <Strong>담당강사 : 이승철</Strong>
+    <br><br>
+    핸드폰번호 : 010-7403-0081
+    <hr>
+    
+    <ul>
+        <li>프로그래밍언어
+            <ul>
+                <li>
+                    <s>Java</s>
+                </li>
+            </ul>
+        </li>
+   
+        <li>데이터베이스
+            <ul>
+                <li>
+                    <s>Oracle</s> 
+                </li>
+            </ul>
+        </li>
+    
+        <li>Frontend
+            <ol>
+                <li><mark>HTML5</mark></li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+            </ol>
+        </li>
+   
+        <li>서버개발기술
+            <ol type="I">
+                <li><s>JDBC</s></li>
+                <li>Servlet</li>
+                <li>JSP</li>
+                <li>AJAX</li>
+            </ol>
+        </li>
+    
+        <li>프레임워크
+            <ol>
+                <li>Mybatis</li>
+                <li><Strong>Spring</Strong></li>
+                <li>react</li>
+            </ol>
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- ul>(li>ul>li>s*2)+(li>ol>li*4)*2+(li>ol>li)*3 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
