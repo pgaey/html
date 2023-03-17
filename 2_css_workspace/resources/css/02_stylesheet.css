@@ -1,0 +1,163 @@
+/* CSS영역(스타일정보 바로 기입) */
+/* 1. 속성 선택자 */
+
+/* div요소 중에서 name속성값이 name1과 "일치"하는 요소만 스타일을 부여하겠다. */
+/* 이거 많이쓰니 기억해두는 것이 좋음 */
+div[name=name1]{
+    background-color:darkslategray;
+}
+
+/* div요소 중에서 name속성 값에 name1이 "포함" 되어있는 요소만 스타일을 부여하겠다. */
+div[name~=name1]{
+    background-color:tomato;
+}
+
+div[name~=e1]{
+    background-color:aquamarine;
+}
+
+/* div요소 중에서 class속성 값에 i가 "포함" 되어있는 요소만 스타일을 부여하겠다 */
+div[class*=i]{
+    color: chocolate;
+    background-color: black;
+}
+
+/* div요소 중에서 class속성 값이 div로 "시작"하는 요소만 스타일을 부여하겠다. */
+div[class|=div]{
+    color:yellowgreen;
+}
+
+/* div요소 중에서 name속성값이 name3으로 "시작"하는 요소만 스타일을 부여하겠다. */
+div[name^=name3]{
+    background-color:rgb(93, 93, 117);
+}
+
+/* div요소 중에서 class속성값이 ss로 "끝"나는 요소만 스타일을 부여하겠다. */
+div[class$=ss]{
+    background-color: darkred;
+}
+
+/* 실습 : class속성값이 div-class인 요소들 중에서 name속성값에 name3이 "포함"되어있는 요소 컨텐트색 변경 */
+/* 내 답 */
+div[class=div-class][name~=name3]{
+    color: rgb(2, 207, 207);
+}
+/* 정답 */
+.div-class[name~=name3]{
+    color:green;
+}
+
+
+/* 2. 자식선택자와 후손선택자 */
+/* - 자식선택자 a > b : a요소의 자식요소들 중에서 b요소들만 선택하겠다. */
+
+/* id속성값이 test1인 요소의 자식들 중에서 h4태그인 자식들만 선택하겠다. */
+#test1>h4{
+    background-color : cornsilk;
+}
+
+/* id속성값이 test1인 요소의 자식들 중에서 ul태그인 요소의 자식들 중에서 li요소들만 선택하겠다. */
+#test1>ul>li{
+    background-color:cyan;
+}
+
+
+/* 후손 선택자 a b : a요소의 후손(모든 하위요소)들 중에서 b요소들만 선택하겠다. */
+#test1 li{
+    background-color:darkgreen;     /* 문법적 오류는 없으나 선택자 우선순위에서 밀려서 적용이 되지 않는다 */
+    color:darksalmon;
+}
+
+
+/* 3. 동위선택자 */
+/* a + b : a요소 뒤에 있는 b요소 단 하나만을 선택 */
+
+/* id가 test2인 요소 뒤에있는 div요소 단 하나만 선택하겠다. */
+#test2 + div{
+    background-color:forestgreen;
+}
+
+/* id가 test2인 요소 뒤에있는 ul요소 하나만 선택하겠다. */
+#test2 + ul{
+    background-color: red; /* 바로 뒤의 요소가 아니기 때문에 선택 불가능 */
+}
+
+/* a ~ b : a요소 뒤에 있는 모든 b요소들을 선택 */
+#test2 ~ div{
+    /* background-color: rgb(184, 153, 192); */
+}
+#test2 ~ ul{
+    background-color: deeppink;
+}
+
+/* 4. 반응 선택자 */
+/* 클래스속성선택자인 .을 선택 */
+.area {
+    width : 100px;
+    height : 100px;
+    background-color:yellowgreen;
+}
+
+/* id속성선택자 # */
+#active-test:active{
+    color:greenyellow;
+    background-color:lemonchiffon;
+    cursor:pointer;
+}
+
+#hover-test:hover{
+    cursor:pointer;
+    color:peachpuff;
+    background-color: violet;
+}
+
+/* 5. 상태선택자 */
+/* 기본적으로 해당 선택된 요소 자체에만 스타일 반영 */
+
+input[type=checkbox]:checked, label{
+    width:20px;
+    height:20px;
+    /* font-size:20px; */
+}
+
+/* 체크박스가 체크 될 때 글씨크기도 20px로 변경하고 싶다 !! */
+input[type=checkbox]:checked + label{
+    font-size:20px;
+}
+
+/* focus */
+input[name^=user]:focus{
+    background-color: magenta;
+}
+
+
+/* enabled, disabled */
+
+
+button:enabled{
+    background-color: indianred;
+}
+button:disabled{
+    background-color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
