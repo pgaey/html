@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>나는 배경을 띄울 수 있어</title>
+    <style>
+        body{
+            background-color: powderblue;
+        }
+
+        #div-bg{
+            border : 30px solid black;
+            padding : 20px;
+            background-color : white;
+            width : 50%;
+            /* div의 content영역의 가로길이를 부모요소의 50%로 지정하겠다는 뜻. 지금 div의 부모는 body */
+            box-sizing:border-box;
+            /* 가로길이를 border영역까지 포함해서 지정하겠다. */
+        }
+        .div-test{
+            border : 10px dashed;
+            padding : 20px;
+            margin : 30px;
+            background-color:lightgreen;
+        }
+
+        #div1{
+            background-clip : border-box;
+        }
+
+        #div2{
+            background-clip : padding-box;
+        }
+
+        #div3{
+            background-clip : content-box;
+        }
+
+        .bg-img{
+            border : 1px solid red;
+            width : 70%;
+            height : 800px;
+
+            background-image : url("resources/image/bono.jpg");
+            background-repeat : no-repeat;
+            background-position : center;
+            background-size : 100%;
+            background-attachment : scroll;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>배경관련스타일(backgorund~)</h1>
+
+    <h3>background-color / background : 배경색을 지정할 수 잇는 스타일 속성</h3>
+
+    <div id="div-bg">
+        생의 그들에게 기관과 가슴에 인간의 때문이다. 같지 바이며, 없는 든 방지하는 철환하였는가?
+        그들의 할지니, 구하지 몸이 뛰노는 부패뿐이다. 이것을 전인 위하여서, 평화스러운 살았으며,
+        천고에 곳으로 영원히 같이, 뿐이다. 든 영원히 얼마나 인도하겠다는 황금시대의 것이다.
+        넣는 맺어, 바이며, 이상의 피가 황금시대를 고행을 피가 이상 철환하였는가?
+        피가 이것이야말로 끓는 인간에 봄날의 칼이다. 피고, 있음으로써 스며들어 천자만홍이 봄바람이다.
+        커다란 우리 주며, 말이다. 풀밭에 긴지라 사라지지 보이는 기쁘며, 피가 용기가 얼음이 사막이다.
+    </div>
+
+    <h3>background-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용 </h3>
+    <pre>
+        [ 표현법 ]
+        선택자  {
+            background-clip : border-box / padding-box / content-box;
+        }
+    </pre>
+
+    <div id="div1" class="div-test">
+        생의 그들에게 기관과 가슴에 인간의 때문이다. 같지 바이며, 없는 든 방지하는 철환하였는가?
+        그들의 할지니, 구하지 몸이 뛰노는 부패뿐이다. 이것을 전인 위하여서, 평화스러운 살았으며,
+        천고에 곳으로 영원히 같이, 뿐이다. 든 영원히 얼마나 인도하겠다는 황금시대의 것이다.
+        넣는 맺어, 바이며, 이상의 피가 황금시대를 고행을 피가 이상 철환하였는가?
+        피가 이것이야말로 끓는 인간에 봄날의 칼이다. 피고, 있음으로써 스며들어 천자만홍이 봄바람이다.
+        커다란 우리 주며, 말이다. 풀밭에 긴지라 사라지지 보이는 기쁘며, 피가 용기가 얼음이 사막이다.
+    </div>
+    <div id="div2" class="div-test">
+        생의 그들에게 기관과 가슴에 인간의 때문이다. 같지 바이며, 없는 든 방지하는 철환하였는가?
+        그들의 할지니, 구하지 몸이 뛰노는 부패뿐이다. 이것을 전인 위하여서, 평화스러운 살았으며,
+        천고에 곳으로 영원히 같이, 뿐이다. 든 영원히 얼마나 인도하겠다는 황금시대의 것이다.
+        넣는 맺어, 바이며, 이상의 피가 황금시대를 고행을 피가 이상 철환하였는가?
+        피가 이것이야말로 끓는 인간에 봄날의 칼이다. 피고, 있음으로써 스며들어 천자만홍이 봄바람이다.
+        커다란 우리 주며, 말이다. 풀밭에 긴지라 사라지지 보이는 기쁘며, 피가 용기가 얼음이 사막이다.
+    </div>
+    <div id="div3" class="div-test">
+        생의 그들에게 기관과 가슴에 인간의 때문이다. 같지 바이며, 없는 든 방지하는 철환하였는가?
+        그들의 할지니, 구하지 몸이 뛰노는 부패뿐이다. 이것을 전인 위하여서, 평화스러운 살았으며,
+        천고에 곳으로 영원히 같이, 뿐이다. 든 영원히 얼마나 인도하겠다는 황금시대의 것이다.
+        넣는 맺어, 바이며, 이상의 피가 황금시대를 고행을 피가 이상 철환하였는가?
+        피가 이것이야말로 끓는 인간에 봄날의 칼이다. 피고, 있음으로써 스며들어 천자만홍이 봄바람이다.
+        커다란 우리 주며, 말이다. 풀밭에 긴지라 사라지지 보이는 기쁘며, 피가 용기가 얼음이 사막이다.
+    </div>
+
+    <hr>
+
+    <h3>배경 이미지 테스트</h3>
+
+    <pre>
+        [ 표현법 ]
+        선택자{
+            background-image : url(이미지경로);
+            background-repeat : repeat / repeat-x / repeat-y / no-repeat
+            background-size : auto / contain / cover / 숫자(px/%);
+            background-position : left / right / cenger 중 1
+                                top / bottom / center 중 1
+            background-attchment : scrol / fixed;
+        }
+    </pre>
+
+    <div class="bg-img"></div>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
+</body>
+</html>

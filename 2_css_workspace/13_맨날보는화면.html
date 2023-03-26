@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>맨날보는거</title>
+
+    <style>
+        #outer{
+            background-color: gold;
+            height:400px;
+            width :300px;
+        }
+        #top{
+            text-align:center;
+        }
+        .logo{
+            font-size:40px;
+            font-weight:900;
+        }
+        #login{
+            width:250px;
+            margin-top:50px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        #login>form>table input{
+            width:170px;
+            height:30px;
+            border-radius : 5px;
+            border : 1px solid gold;
+        }
+        #login>form>table button{
+            width:60px;
+            height:70px;
+            border : 1px solid gold;
+            border-radius:7px;
+            background-color:rgb(143, 131, 63);
+            color:white;
+        }
+        #etc{
+            text-align:center;
+        }
+        #etc>a{
+            font-size:12px;
+            color: rgb(112, 110, 110);
+        }
+        #etc>a:hover{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="top">
+            <label class="logo">MAKAO</label>
+        </div>
+        <div id="login">
+            <form action="login.me" method="post">
+                <table>
+                    <tr>
+                        <td><input type="text" name="userId" placeholder="아이디를 입력하세요"></td>
+                        <td rowspan="2"><button type="submit" id="loginBtn">로그인</button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="userPwd" placeholder="비밀번호 입력"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="etc"><a>계정찾기</a> | <a>비밀번호 재설정</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

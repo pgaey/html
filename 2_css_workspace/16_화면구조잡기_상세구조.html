@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+        div{
+            border:1px solid red;
+            box-sizing:border-box;
+        }
+         /* 전체를 감싸는 div */
+        .wrap{
+            width : 1000px;
+            height : 800px;
+            margin : auto;
+        }
+        /* 크게 4등분 */
+        .wrap > div{width : 100%;}
+        #header, #footer{height : 20%;}
+        #navigator{height : 5%; }
+        #content{height : 55%;}
+        
+        /* 세부 div들 속성 */
+        /* 공통속성 */
+        #header>div, #content>div{
+            height : 100%;
+            float: left;
+        }
+
+        /* 각각의 요소들 가로길이를 정해주기 */
+        #header_1{width : 20%;}
+        #header_2{width : 65%;}
+        #header_3{width : 15%;}
+        
+        #content_1{width : 15%}
+        #content_2{width : 60%;}
+        #content_3{width : 25%;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1"></div>
+            <div id="header_2"></div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator"></div>
+        <div id="content">
+            <div id="content_1"></div>
+            <div id="content_2"></div>
+            <div id="content_3"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
