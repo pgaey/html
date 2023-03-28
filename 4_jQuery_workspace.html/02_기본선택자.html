@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본선택자</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>기본선택자</h1>
+
+    <!-- 
+        아이디 선택자, 태그 선택자, 클래스 선택자
+    -->
+
+    <h3>* 아이디 선택자</h3>
+    <p>
+        특성 고유한 아이디 속성값을 가진 요소 단 하나만을 선택하고자 할 때 사용
+    </p>
+
+    <h1 id="id1">ID1</h1>
+    <h2 id="id2">ID2</h2>
+
+    <script>
+        $(document).ready(function(){
+            // 선택된 요소객체의 속성에 접근해서 값을 변경
+            // 순수 자바스크립트 방식
+            // document.getElementById('아이디속성값');
+            // innerHTML / innerText 대입연산자를 사용해서 값을 대입
+            var ied = document.getElementById('id1');
+            console.dir(ied);
+            document.getElementById('id1').style.color='red';
+            document.getElementById('id1').innerHTML = '안녕';
+
+            // jQuery방식
+            // $('#아이디속성값')
+            // 선택된 요소객체에 메소드를 활용해서 값을 변경
+            $('#id2').css('color', 'pink');
+            $('#id2').html('잘가 ~ ');
+            // .html() : innerHTML과 관련된 기능을 수행하는 메소드
+
+        });
+    </script>
+
+    <hr>
+
+    <h3>* 태그 선택자  </h3>
+    <p>
+        해당 태그요소를 전부 다 가져오고 싶을 때 사용
+    </p>
+
+    <p>Java</p>
+    <p>Oracle</p>
+    <p>JDBC</p>
+
+    <h5>HTML</h5>
+    <h5>CSS</h5>
+    <h5>JavaScript</h5>
+
+    <script>
+        jQuery(document).ready(function(){
+            // 순수 자바스크립트 방식
+            // document.getElementsByTagName('태그명') => 배열형태
+            var p = document.getElementsByTagName('p'); // [p, p, p, ....]
+            // p.style.color = 'yellow'; p는 배열 -> 배열안에 요소로 있는 p요소에게 스타일을 주고싶음
+            for(let i = 0; i < p.length; i++){
+                p[i].style.color = 'red';
+            };
+
+            // jQuery 방식
+            // $('태그명')
+            $('h5').css('color', 'blue');
+
+            $('p, h5, #id1').css('background', 'pink');
+
+        });
+    </script>
+ 
+    <hr>
+
+    <h3>* 클래스 선택자</h3>
+
+    <p>
+        특정 클래스 속성값을 가진 요소들을 선택할 때 사용
+    </p>
+
+    <h1 class="item">Class1</h1>
+    <h1 class="item select">Class2</h1>
+    <h1 class="item select">Class3</h1>
+
+    <script>
+        $(function(){
+            // 순수 자바스크립트 방식
+            // 대상 => 클래스 속성값이 item인 요소들
+            // 글자색 => orangered
+            // 클릭시 => 경고창(메세지는 맘대로)
+            // document.getElementsByClassName('클래스속성값') => 배열
+
+            var cl = document.getElementsByClassName('item');
+            
+            /* cl[0].style.color = 'orangered';
+            console.dir(cl);
+            cl[0].onclick = function(){
+                alert('??');
+            }; */
+
+            /* var i=0; i < cl.length; i++ */
+            for(var i in cl){        // for in문으로 하면 밑에께 안먹고 일반 for문은 먹음
+                cl[i].style.color = 'orangered';
+                console.dir(cl);
+                cl[i].onclick = function(){
+                    alert('?as?');
+                };
+            };
+            /*
+            for문은 cl.length == 실제 length의 값만큼 돈다
+            for in 문은 전체를 돌게 되는데
+            cl은 배열이 아니라 객체라서
+            h1.item    h1.item.select   h1.item.select     length속성값 까지  돌게 된다
+            이 과정에서  length.style.color = 'orangered'; 가 되므로 오류가 발생하고
+            그 뒤에 있는 코드가 정상작동하지 않게된다.
+            */
+
+
+            // jQuery 방식                                  이거 왜 안먹음
+            // $('.클래스속성값')
+            $('.select').css('background', 'lightgray');
+            $('.select').click(function(){
+                console.log('h1클릭 ~ ');
+            });
+            // click() : 클릭 이벤트와 관련된 기능 수행
+        });
+    </script>
+
+    <!-- 
+        * 요소를 선택하는 방법
+
+        순수 JavaScript방식                             |                   jQuery 방식
+        ===================================================================================================
+        document.getElementById('아이디속성값')         |       $('#아이디속성값')
+        document.getElementsByTagName('태그명')         |       $('태그명')
+        document.getElementsByClassName('클래스속성값') |       $('.클래스속성값')
+
+        * 선택된 요소의 속성값을 변경하고자 할 때
+        순수 JavaScript방식                             |           jQuery 방식
+        ===================================================================================================
+                    |   속성에 접근해서 대입하는 방식     |     메소드를 호출하는 방식
+        Style       |   .style.스타일속성 = '변경할 값'; |      .css('스타일속성', '변경할값');
+        Content     |   .innerHTML = '변경할 값';       |       .html('변경할값');
+        Event       |   .on이벤트명 = function(){}      |       .이벤트명(function(){});
+    -->
+
+
+    <h2 class="item1" id="test1">Class1</h2>
+    <h2 class="item1 select1">Class2</h2>
+    <h2 class="item1 select1">Class3</h2>
+    <button onclick="test1();">asd</button>
+
+    <script>
+        $(function(){
+
+            var cl = document.getElementsByClassName('item1');
+
+            for(let i in cl){
+                cl[i].style.color = 'red';
+            }
+        });
+
+        function test1(){
+            var test1 = document.getElementsByName('test1');
+            console.dir(test1.con);
+
+        }
+        
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
