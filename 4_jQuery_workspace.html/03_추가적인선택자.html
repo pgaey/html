@@ -265,16 +265,39 @@
                 
                 document.getElementById('result').innerHTML = $('option:selected').html();
                 // 자바스크립트와 제이쿼리 같이 사용 가능
-
-
             })
-
-
-
-
 
         })
     </script>
+
+    <h4>- enabled, disabled 상태(input, button, textarea...)</h4>
+
+    <p>
+        활성화/비활성화 된 요소 선택된 <br>
+        :enabled <br>
+        :disabled <br>
+    </p>
+    <div id="wrap">
+        활성화 텍스트 상자 : <input type="text"> <br>
+        비활성화 텍스트 상자 : <input type="text" disabled value="user01"> <br>
+
+        활성화 버튼  : <input type="button"> <br>
+        비활성화 버튼 : <input type="button" disabled> <br>
+    </div>
+
+    <script>
+        $(function(){
+            $('#wrap>:enabled').css('background', 'yellowgreen');
+            $('#wrap>:disabled').css('background', 'greenyellow');
+        });
+    </script>
+
+
+
+
+
+
+
 
 
 
