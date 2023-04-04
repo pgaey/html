@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>실습</title>
+    <style>
+       /*  div{
+            border:1px solid red;
+            box-sizing:border-box;
+        } */
+         /* 전체를 감싸는 div */
+        .wrap{
+            width : 1000px;
+            height : 800px;
+            margin : auto;
+            background-color: white;
+        }
+        /* 크게 4등분 */
+        .wrap > div{width : 100%;}
+        #header, #footer{height : 20%;}
+        #navigator{
+            height : 5%;
+            border-top : 1px solid rgb(160, 155, 155);
+            border-bottom : 1px solid rgb(160, 155, 155);
+        }
+        #content{height : 55%;}
+        
+        /* 세부 div들 속성 */
+        /* 공통속성 */
+        #header>div, #content>div{
+            height : 100%;
+            float: left;
+        }
+
+        /* 각각의 요소들 가로길이를 정해주기 */
+        #header_1{width : 20%;}
+        #header_2{width : 65%;}
+        #header_3{width : 15%;}
+        
+        #content_1{width : 15%}
+        #content_2{width : 60%;}
+        #content_3{width : 25%;}
+
+        /*-------------헤더 영역 ------------------ */
+        #header_1{
+            text-align: right;
+        }
+        #logo{
+            font-size:40px;
+            font-weight:900;
+        }
+
+        /*----- 여기서부터 footer 영역 ------*/
+        /* 세부속성 */
+        #footer_1, #footer_2{
+            width : 100%;
+        }
+
+        #footer_1{
+            height : 20%;
+            background-color : rgb(233, 233, 233);
+        }
+        #footer_2{
+            height : 80%;
+        }
+
+        /* footer_1의 a태그 속성 */
+        #footer_1>a{
+            text-decoration : none;
+            color : rgb(85, 85, 85);
+            font-weight : 600;
+            margin : 15px;
+            vertical-align: middle;
+        }
+
+        #footer_1>a:hover{
+            color:rgb(204, 20, 20);
+        }
+
+        /* p태그에 대한 세부적인 속성들 */
+        #footer_2 > p{
+            width : 100;
+            /* p태그의 특성 상 두 개의 p태그 사이에 argin이 기본적으로 위, 아래 16px씩 들어가있음  */
+            margin : 0;
+            box-sizing : border-box;
+            /* p태그의 테두리까지를 부모의 20/80%로 지정해야 부모영역안에 잘 담김 */
+            font-size : 12px;
+            color: rgb(107, 104, 104);
+            
+        }
+        #p1{
+            height : 80%;
+            padding-top: 5px;
+            padding-left : 10px;
+        }
+        #p2{
+            height : 20%;
+            font-weight : 250;
+            text-align : center;
+        }
+
+
+        /*--------------------------------여기서부터 로그인 영역------------------------------------ */
+        /* 1번 */
+        #login_form{
+            width:100%;
+            height:30%;
+        }
+        
+        /* 2_1번, 2_2번 */
+        #login_form > * {
+            width:100%;
+        }
+        #login_form_input{
+            height : 80%;
+        }
+        #login_form_etc{
+            height : 20%;
+        }
+
+        /* 3_1, 3_2번 */
+        #login_form_input > div {
+            height : 100%;
+            float : left;
+        }
+        #login_input_id_pwd{width : 65%;}
+        #login_input_btn{width : 35%}
+        /* input 태그 늘려주기 */
+
+        #login_input_id_pwd > input{
+            box-sizing: border-box;
+            width : 100%;
+            height : 50%;
+        }
+        #login_input_btn > input{
+            width:100%;
+            height:100%;
+        }
+        #login_form_etc>a{
+            text-decoration : none; 
+            color : rgb(63, 62, 62);
+            font-size : 13px;
+            margin : 4px;
+        }
+
+
+        /*---------------------------------------------------------여기서부터 검색창--------------------------------------------------------- */
+
+        #header_2{
+            position : relative;
+        }
+        #search_form{
+            width : 70%;
+            height : 20%;
+            position : absolute;
+            top : 0px;
+            left : 0px;
+            bottom : 0px;
+            right : 0px;
+            margin : auto;
+        }/* 반드시 정렬기준 잡아주고 margin auto , 0px 다 넣어줘야함 */
+
+        /* 검색창 form태그 내부 div 속성 */
+        #search_form>div{
+            float : left;
+            height : 100%;
+        }
+
+        #search_text { width : 90%;}
+        #search_btn { width :10%;}
+
+        /* input 태그 늘려주기 */
+        #search_form input{
+            width : 100%;
+            height : 100%;
+            box-sizing : border-box;
+        }
+
+        /* ------------------------------------------------------------------------------------여기서부터 navi--------------------------------------------------------------- */
+
+        #navi{
+            list-style : none;
+            /* ul요소는 기본적으로 위, 아래 margin이 존재 왼쪽에는 padding도 있음 */
+            margin : 0px;
+            padding: 0px;
+            height : 100%
+        }
+
+        #navi > li {
+            float : left;
+            height : 100%;
+            width : 13%;
+            text-align : center;
+        }
+
+        #navi a{
+            text-decoration : none;
+            color :forestgreen;
+            font-weight : 800;
+            width : 100%;
+            height : 100%; /* a 태그는 인라인요소이기 때문에 width, height 속성 적용 X => 적용불가능 */
+            display : block; /* 인라인 요소를 블록으로 바꿔줌 */
+            /* vertical-align : middle; */
+            line-height : 35px; /* 줄간격 속성 px / % / em */ 
+            /* 화면 통합 시 이슈 발생 : 메인메뉴의 a태그와 서브메뉴의 ul태그가 연결이 미세하게 끊겨있음 그래서 문제 발생 ! */
+            /* 
+                transform : 애니메이션 효과를 줄 수 있는 속성
+                scale() : 크기
+            */
+            transform : scale(1);
+        }
+        #navi a:hover{
+            font-size:17px;
+            color: rgb(16, 85, 16);
+        }
+
+        #navi > li > ul{
+            list-style : none;
+            padding : 0px;
+            display : none; /* 평소에는 안보이다가 마우스가 올라가는 순간 펼쳐지는 효과 1 */
+        }
+        
+        #navi > li > a:hover + ul{
+            display : block; /* 평소에는 안보이다가 마우스가 올라가는 순간 편쳐지는 효과 */
+        }
+        #navi > li > ul:hover{
+            display : block;
+        }
+        #navi > li > ul a{font-size : 11px;}
+        #navi > li > ul a:hover{font-size : 14px;}
+        
+        /* ----------------------------- 여기가 content_1번 창 ----------------------------------------- */
+        #space_1, #space_2{
+            width : 100%;
+            height : 33%;
+        }
+        #space_3{
+            width : 100%;
+            height : 34%;
+        }
+        #content_1 a{
+            padding-top : 13px;
+            text-decoration: none;
+            display : block;
+            color : forestgreen;
+        }
+
+        #content_1 a>img{
+            width:80%;
+            height:80%;
+        }
+        /* -----------------------------------------------------------------------여기가 content_2------------------------------ */
+        #img{
+            width : 100%;
+            height : 100%;
+            background-image : url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNjEyMDVfMTgy%2FMDAxNDgwOTM5NDc2MjQx.B6yZSpvZNeDNOicW-pRNlcJauDJATJiIroj-e_x6m40g.gc4LFGmO9cUjP-GYvlcFrE8U3P2zDdTuECQEP0Jjf7wg.JPEG.ghrahr3121%2F%25C4%25B8%25C3%25B3_2016_12_05_16_03_22_610.jpg&type=a340");
+            background-repeat: no-repeat;
+            background-size : 50%;
+            background-position : center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="header">
+            <div id="header_1">
+                <label id="logo">NEWS</label>
+            </div>
+            <div id="header_2">
+
+                <form action="search.do" id="search_form" method="get">
+                    <div id="search_text">
+                        <input type="text" name="query">
+                    </div>
+                    <div id="search_btn">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+
+            </div>
+            <div id="header_3"></div>
+        </div>
+        <div id="navigator">
+            
+            <ul id="navi">
+                <li><a href="">Java</a></li>
+                <li><a href="">Oracle</a></li>
+                <li><a href="">Front-End</a>
+                    <ul>
+                        <li><a href="">HTML</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">jQuery</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Server</a>
+                <ul>
+                    <li><a href="">JDBC</a></li>
+                    <li><a href="">Servlet</a></li>
+                    <li><a href="">JSP</a></li>
+                    <li><a href="">Ajax</a></li>
+                </ul></li>
+                <li><a href="">Framework</a>
+                    <ul>
+                        <li><a href="">MyBatis</a></li>
+                        <li><a href="">Spring</a></li>
+                        <li><a href="">React</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <div id="content">
+            <div id="content_1">
+                <div id="space_1" class="space">
+            <a href="https://www.imbc.com/?NaPm=ct%3Dlfj4d9ph%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D752ac48281cf9a99e4074d1a821fe4f8144a96a3">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTlfNjcg%2FMDAxNjM3MzExNzI0NTY2.lswN6A8dF0Deon5kVg05zu09CP98wHoovI6da-v1_mUg.JhVIqHDEbFAjZUGjTwuergfPGr8aiUayX-4eSKi_s-wg.PNG.ljsuk2%2Fgo_MBC.png&type=a340" alt="">
+            </a>
+        </div>
+        <div id="space_2" class="space">
+            <a href="https://www.kbs.co.kr/">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20160625_235%2Fppanppane_1466811741216qfnos_PNG%2F%25C4%25C9%25C0%25CC%25BA%25F1%25BF%25A1%25BD%25BA_%25B7%25CE%25B0%25ED_%25281%2529.png&type=a340" alt="">
+            </a>
+        </div>
+        <div id="space_3" class="space">
+            <a href="https://www.sbs.co.kr/?NaPm=ct%3Dlfj4dlcg%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3D%7Chk%3D8908eddbd0aca6027d3059e575feff0059813ac3">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20160625_16%2Fppanppane_1466811795453v5kIY_PNG%2F%25BF%25A1%25BD%25BA%25BA%25F1%25BF%25A1%25BD%25BA%25B7%25CE%25B0%25ED_%25281%2529.png&type=a340" alt="">
+            </a>
+        </div>
+            </div>
+            <div id="content_2">
+                <div id="img"></div>
+            </div>
+            <div id="content_3">
+
+                <!-- 1. 로그인과 관련된 전체 내용을 감싸는 div -->
+                <div id="login_form">
+                    <!-- 2_1. 입력받을 input태그들이 존재할 영역 -->
+                    <form action="login.me" method="post" id="login_form_input">
+                        <!-- 3_1. 왼쪽 : 아이디, 비밀번호를 입력받을 text box 영역 -->
+                        <div id="login_input_id_pwd">
+                            <input type="text" name="userId" placeholder="아이디 입력" required>
+                            <input type="password" name="userPwd" placeholder="비밀번호 입력" required>
+                        </div>
+                        <!-- 3_2. 오른쪽 : 요청전송을 보낼 수 있는 button 영역 -->
+                        <div id="login_input_btn">
+                            <input type="submit" value="로그인">
+                        </div>
+                    </form>
+                    <!-- 2_2. 회원가입 / ID/PWD찾기 페이지를 요청할 a태그들이 존재할 영역 -->
+                    <div id="login_form_etc">
+                        <a href="#">회원가입</a> |
+                        <a href="#">아이디 / 비밀번호 찾기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+            <div id="footer_1">
+                <a href="#">이용약관</a> | 
+                <a href="#">개인정보취급방침</a> | 
+                <a href="#">인재채용문의</a> | 
+                <a href="#">훈련비 게시</a> | 
+            </div>
+            <div id="footer_2">
+                <p id="p1">
+                    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F <br>
+                    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F <br>
+                    강남지원 3관 : 서울특별시 강남구 테헤란로 130 호산빌딩 5F, 6F <br>
+                    종로지원 : 서울특별시 중구 남대문로 120 그레이츠 청계(구 대일빌딩) 2F, 3F <br>
+                    당산지원 : 서울특별시 영등포구 선유동2로 57 이레빌딩(구관) 19F, 20F
+                </p>
+                <p id="p2">
+                    Copyright © 1998-2023 KH Information Educational Institute All Right Reserved
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
